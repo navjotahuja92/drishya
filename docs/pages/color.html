@@ -1,0 +1,33 @@
+<div class="page-section" id="colors">
+    <h1 class="section-title">
+        Color
+    </h1>
+    <div class="section-data">
+    </div>
+</div>
+<script type="text/javascript">
+    var colors = ["red", "pink", "purple", "deeppurple", "indigo", "blue", "lightblue", "cyan", "teal", "green", "lightgreen", "lime", "yellow", "amber", "orange", "deeporange", "brown", "grey", "bluegray"];
+var shades = 4;
+
+var rowSection = document.querySelector("#colors .section-data");
+colors.forEach(function(color) {
+    var colorGroupedHTML = '';
+    // Lightened Colors
+    colorGroupedHTML = colorGroupedHTML + '<div class="row">';
+    for (var i = shades; i >= 1; i--) {
+        var colorColumn = `<div class="${color} lighten-${i} column s3">${color} lighten-${i}</div>`;
+        colorGroupedHTML = colorGroupedHTML + colorColumn;
+    }
+    // Normal Color
+    var colorColumn = `<div class="${color} column s12 white-text">${color} </div>`;
+    colorGroupedHTML = colorGroupedHTML + colorColumn;
+
+    // Darkened Colors
+    for (var i = 1; i <= shades; i++) {
+        var colorColumn = `<div class="${color} darken-${i} column s3 white-text">${color} darken-${i}</div>`;
+        colorGroupedHTML = colorGroupedHTML + colorColumn;
+    }
+    colorGroupedHTML = colorGroupedHTML + '</div>'
+    rowSection.innerHTML = rowSection.innerHTML + colorGroupedHTML;
+});
+</script>

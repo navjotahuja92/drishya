@@ -1,0 +1,46 @@
+$red :hsla(4, 90%, 58%, 1);
+$pink :hsla(340, 82%, 52%, 1);
+$purple :hsla(291, 64%, 42%, 1);
+$deeppurple :hsla(262, 52%, 47%, 1);
+$indigo :hsla(231, 48%, 48%, 1);
+$blue :hsla(207, 90%, 54%, 1);
+$lightblue :hsla(199, 98%, 48%, 1);
+$cyan :hsla(187, 100%, 42%, 1);
+$teal :hsla(174, 100%, 29%, 1);
+$green :hsla(122, 39%, 49%, 1);
+$lightgreen :hsla(88, 50%, 53%, 1);
+$lime :hsla(66, 70%, 54%, 1);
+$yellow :hsla(54, 100%, 62%, 1);
+$amber :hsla(45, 100%, 51%, 1);
+$orange :hsla(36, 100%, 50%, 1);
+$deeporange :hsla(14, 100%, 57%, 1);
+$brown :hsla(16, 25%, 38%, 1);
+$grey :hsla(0, 0%, 62%, 1);
+$bluegray :hsla(200, 18%, 46%, 1);
+$white :hsla(0, 0%, 100%, 1);
+$black :hsla(0, 0%, 0%, 1);
+$colors: ( "red": $red, "pink": $pink, "purple": $purple, "deeppurple": $deeppurple, "indigo": $indigo, "blue": $blue, "lightblue": $lightblue, "cyan": $cyan, "teal": $teal, "green": $green, "lightgreen": $lightgreen, "lime": $lime, "yellow": $yellow, "amber": $amber, "orange": $orange, "deeporange": $deeporange, "brown": $brown, "grey": $grey, "bluegray": $bluegray, "white": $white, "black": $black);
+$shades: 4;
+$colorIntensityMultiplier: 10;
+@each $color,
+$colorvalue in $colors {
+    .#{$color} {
+        background-color: $colorvalue !important;
+    }
+    .#{$color}-text {
+        color: $colorvalue !important;
+    }
+    .#{$color}-border {
+        border-color: $colorvalue !important;
+    }
+    @for $i from 1 through $shades {
+        .#{$color}.lighten-#{$i} {
+            background-color: lighten($colorvalue, $i * $colorIntensityMultiplier) !important;
+        }
+    }
+    @for $i from 1 through $shades {
+        .#{$color}.darken-#{$i} {
+            background-color: darken($colorvalue, $i * $colorIntensityMultiplier) !important;
+        }
+    }
+}

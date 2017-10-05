@@ -1,0 +1,22 @@
+//--------------------- Globals -----------------------
+$global-shadow-color: #a5a5a5;
+//--------------------- Grid --------------------------
+$num-cols: 12 !default;
+$gutter-width: 1rem !default;
+// Screen Widths in px
+$small-screen-max: 600;
+$medium-screen-max: 992;
+$large-screen-max: 1200;
+// Figure out extra large later
+$small-and-down: "only screen and (max-width : #{$small-screen-max}px)" !default;
+$medium-and-up: "only screen and (min-width : #{$small-screen-max + 1}px)" !default;
+$large: "only screen and (min-width : #{$large-screen-max}px)" !default;
+//--------------------- Elements --------------------------
+$input-border: 0;
+$input-padding: 1em;
+$input-border-color: #8a8a8a;
+$input-border-style: solid;
+$input-border-radius: 0;
+$input-box-shadow: 1px 1px 5px $global-shadow-color;
+$input-font: "Montserrat",
+sans-serif;

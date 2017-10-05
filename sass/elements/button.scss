@@ -1,0 +1,19 @@
+button,
+input[type=button],
+input[type=submit] {
+    outline: none;
+    font-family: $input-font, sans-serif;
+    transition: 0.1s ease all;
+    padding: 1em 0.5em;
+    background: white;
+    border: none;
+    cursor: pointer;
+    @extend .shadowed-1;
+    font-size: 1em;
+    &:hover {
+        @extend .shadowed-2;
+    }
+    &:active {
+        box-shadow: 1px 1px 0;
+    }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "drishya",
+  "version": "1.0.0",
+  "description": "Css Framework for everyone",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -e scss --watch sass ./tasks/dev.js",
+    "docs-server": "./node_modules/.bin/http-server docs -p 8021"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "design",
+    "drishya"
+  ],
+  "author": "Navjot Ahuja <navjotahuja92@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.5.2",
+    "nodemon": "^1.12.1",
+    "sass-loader": "^6.0.3"
+  },
+  "dependencies": {
+    "http-server": "^0.10.0"
+  }
+}
